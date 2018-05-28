@@ -1,6 +1,6 @@
-package com.hlz.app.demo.dao;
+package com.hlz.app.demo.dao.url;
 
-import com.hlz.app.demo.model.UrlInfo;
+import com.hlz.app.demo.model.url.UrlInfo;
 
 import java.util.List;
 

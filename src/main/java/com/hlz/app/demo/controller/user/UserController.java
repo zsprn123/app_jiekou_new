@@ -1,9 +1,9 @@
-package com.hlz.app.demo.controller;
+package com.hlz.app.demo.controller.user;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.hlz.app.demo.model.UserInfo;
-import com.hlz.app.demo.service.UserService;
+import com.hlz.app.demo.model.user.UserInfo;
+import com.hlz.app.demo.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

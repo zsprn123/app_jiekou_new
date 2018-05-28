@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hlz.app.demo.dao.UserDao" >
+<mapper namespace="com.hlz.app.demo.dao.user.UserDao" >
     <sql id="BASE_TABLE">
     t_user
     </sql>
@@ -10,7 +10,7 @@
     </sql>
 
 
-    <insert id="insert" parameterType="com.hlz.app.demo.model.UserInfo">
+    <insert id="insert" parameterType="com.hlz.app.demo.model.user.UserInfo">
         INSERT INTO
         t_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -27,7 +27,7 @@
         </trim>
     </insert>
 
-    <select id="selectUsers" resultType="com.hlz.app.demo.model.UserInfo">
+    <select id="selectUsers" resultType="com.hlz.app.demo.model.user.UserInfo">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM

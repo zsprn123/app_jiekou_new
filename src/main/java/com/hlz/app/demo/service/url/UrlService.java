@@ -1,6 +1,6 @@
-package com.hlz.app.demo.service;
+package com.hlz.app.demo.service.url;
 
-import com.hlz.app.demo.model.UrlInfo;
+import com.hlz.app.demo.model.url.UrlInfo;
 
 import java.util.List;
 

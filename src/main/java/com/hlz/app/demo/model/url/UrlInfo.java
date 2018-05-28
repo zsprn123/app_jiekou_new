@@ -1,4 +1,4 @@
-package com.hlz.app.demo.model;
+package com.hlz.app.demo.model.url;
 
 public class UrlInfo {
     private String url;

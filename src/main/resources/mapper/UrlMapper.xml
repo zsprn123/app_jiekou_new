@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hlz.app.demo.dao.UrlDao" >
+<mapper namespace="com.hlz.app.demo.dao.url.UrlDao" >
     <sql id="BASE_TABLE">
     t_url
     </sql>
@@ -9,7 +9,7 @@
     url
     </sql>
 
-    <select id="selectUrl" resultType="com.hlz.app.demo.model.UrlInfo">
+    <select id="selectUrl" resultType="com.hlz.app.demo.model.url.UrlInfo">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM

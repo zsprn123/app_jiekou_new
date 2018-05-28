@@ -1,8 +1,8 @@
-package com.hlz.app.demo.service.impl;
+package com.hlz.app.demo.service.impl.url;
 
-import com.hlz.app.demo.dao.UrlDao;
-import com.hlz.app.demo.model.UrlInfo;
-import com.hlz.app.demo.service.UrlService;
+import com.hlz.app.demo.dao.url.UrlDao;
+import com.hlz.app.demo.model.url.UrlInfo;
+import com.hlz.app.demo.service.url.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

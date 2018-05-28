@@ -1,4 +1,4 @@
-package com.hlz.app.demo.model;
+package com.hlz.app.demo.model.user;
 
 public class UserInfo {
     private Integer userId;

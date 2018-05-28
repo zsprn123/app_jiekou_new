@@ -1,6 +1,6 @@
-package com.hlz.app.demo.service;
+package com.hlz.app.demo.service.user;
 
-import com.hlz.app.demo.model.UserInfo;
+import com.hlz.app.demo.model.user.UserInfo;
 
 import java.util.List;
 
