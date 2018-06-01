@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.homePageData.dao.HomePageDataDao">
+    <sql id="TABLE_COLUMN">
+        T.jobname,
+        T.address,
+        T.time,
+        T.money,
+        T.settlement,
+        T.companyicon,
+        T.companyname
+    </sql>
+    
+    <select id="selectHomePageDateList"   resultType="com.hlz.app.homePageData.model.HomePageDataDto">
+        SELECT
+        <include refid="TABLE_COLUMN"/>
+        FROM t_job T
+        ORDER BY TIME
+
+    </select>
+
+</mapper>

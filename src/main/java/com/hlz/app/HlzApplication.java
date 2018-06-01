@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.hlz.app.demo.dao")
+@MapperScan("com.hlz.app.*.dao")
 public class HlzApplication {
 
     public static void main(String[] args) {
