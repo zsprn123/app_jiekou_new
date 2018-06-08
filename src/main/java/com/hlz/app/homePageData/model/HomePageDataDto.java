@@ -4,44 +4,44 @@ import java.io.Serializable;
 
 public class HomePageDataDto implements Serializable {
 
-    private String jobName;
-    private String address;
-    private String time;
-    private String money;
+    private String job;
+    private String merchant_address;
+    private String part_time_date;
+    private String pay_money;
     private String settlement;
-    private String companyIcon;
-    private String companyName;
+    private String business_licens;
+    private String merchant_name;
 
-    public String getJobName() {
-        return jobName;
+    public String getJob() {
+        return job;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setJob(String job) {
+        this.job = job;
     }
 
-    public String getAddress() {
-        return address;
+    public String getMerchant_address() {
+        return merchant_address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setMerchant_address(String merchant_address) {
+        this.merchant_address = merchant_address;
     }
 
-    public String getTime() {
-        return time;
+    public String getPart_time_date() {
+        return part_time_date;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setPart_time_date(String part_time_date) {
+        this.part_time_date = part_time_date;
     }
 
-    public String getMoney() {
-        return money;
+    public String getPay_money() {
+        return pay_money;
     }
 
-    public void setMoney(String money) {
-        this.money = money;
+    public void setPay_money(String pay_money) {
+        this.pay_money = pay_money;
     }
 
     public String getSettlement() {
@@ -52,19 +52,19 @@ public class HomePageDataDto implements Serializable {
         this.settlement = settlement;
     }
 
-    public String getCompanyIcon() {
-        return companyIcon;
+    public String getBusiness_licens() {
+        return business_licens;
     }
 
-    public void setCompanyIcon(String companyIcon) {
-        this.companyIcon = companyIcon;
+    public void setBusiness_licens(String business_licens) {
+        this.business_licens = business_licens;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getMerchant_name() {
+        return merchant_name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setMerchant_name(String merchant_name) {
+        this.merchant_name = merchant_name;
     }
 }
