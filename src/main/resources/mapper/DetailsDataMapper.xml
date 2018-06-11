@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.details.dao.DetailsDao">
+    <sql id="TABLE_COLUMN">
+        T.merchant_name merchantName,
+        T.merchant_address merchantAddress,
+        T.business_licens businessLicens,
+        T.phone_num phoneNum,
+        T.principal ,
+        T.job,
+        T.people_count peopleCount,
+        T.job_require jobRequire,
+        T.insert_date insertDate,
+        T.part_time_date partTimeDate,
+        T.pay_type payType,
+        T.pay_money payMoney
+    </sql>
+    
+    <select id="selectDetailsDataList"  parameterType="java.util.Map"  resultType="com.hlz.app.details.model.DetailsDto">
+        SELECT
+        <include refid="TABLE_COLUMN"/>
+        FROM merchant_info T
+        WHERE T.merchant_id = #{id}
+    </select>
+
+</mapper>
