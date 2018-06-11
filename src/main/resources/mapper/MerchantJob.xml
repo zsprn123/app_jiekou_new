@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.merchant_info.dao.MerchantJobDao" >
+
+
+    <insert id="insert" parameterType="com.hlz.app.merchant_info.model.MerchantJob">
+        INSERT INTO
+        merchant_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            merchant_id,merchant_name,
+            merchant_address,business_licens,
+            phone_num,principal,
+            job,people_count,
+            job_require,insert_date,
+            part_time_date,pay_type,
+            pay_money
+
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{merchantId, jdbcType=VARCHAR},#{merchantName, jdbcType=VARCHAR},
+            #{merchantAddress, jdbcType=VARCHAR},#{businessLicens, jdbcType=VARCHAR},
+            #{phoneNum, jdbcType=VARCHAR},#{principal, jdbcType=VARCHAR},
+            #{job, jdbcType=VARCHAR},#{peopleCount, jdbcType=VARCHAR},
+            #{jobRequire, jdbcType=VARCHAR},#{insertDate,jdbcType=TIMESTAMP},
+            #{partTimeDate,jdbcType=VARCHAR},#{payType,jdbcType=VARCHAR},
+            #{payMoney,jdbcType=VARCHAR}
+        </trim>
+    </insert>
+
+
+</mapper>

@@ -1,6 +1,5 @@
 package com.hlz.app.details.controller;
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.details.dao.DetailsDao;
 import com.hlz.app.details.model.DetailsDto;
 import com.hlz.app.details.service.impl.DetailsServiceImpl;
 import org.slf4j.Logger;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
 
 @Controller
