@@ -3,19 +3,21 @@
 <mapper namespace="com.hlz.app.homePageData.dao.HomePageDataDao">
     <sql id="TABLE_COLUMN">
         T.job,
-        T.merchant_address,
-        T.part_time_date,
-        T.pay_money,
-        T.settlement,
-        T.business_licens,
-        T.merchant_name
+        T.merchant_address merchantAddress,
+        T.part_time_date partTimeDate,
+        T.pay_money payMoney,
+        <!--T.settlement,-->
+
+        T.business_licens businessLicens,
+        T.merchant_name merchantName,
+        T.merchant_id merchantId
     </sql>
     
     <select id="selectHomePageDateList"   resultType="com.hlz.app.homePageData.model.HomePageDataDto">
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM merchant_info T
-        ORDER BY TIME
+        <!--ORDER BY t.insert_date -->
 
     </select>
 

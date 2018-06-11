@@ -27,7 +27,6 @@ public class UrlController {
         try{
             List<UrlInfo> list = urlService.findUrl();
             dto.setData(list);
-            dto.setTitle2(list);
             dto.setMessage("操作成功");
             dto.setSuccess("1");
             logger.info(logtitle+"查询成功");
