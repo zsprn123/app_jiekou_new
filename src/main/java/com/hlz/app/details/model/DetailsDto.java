@@ -9,7 +9,9 @@ public class DetailsDto {
     private String peopleCount;
     private String jobRequire;
     private String insertDate;
-    private String partTimeDate;
+    private String startTime;
+    private String deadlineTime;
+    private String endTime;
     private String payType;
     private String payMoney;
 
@@ -85,12 +87,28 @@ public class DetailsDto {
         this.insertDate = insertDate;
     }
 
-    public String getPartTimeDate() {
-        return partTimeDate;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setPartTimeDate(String partTimeDate) {
-        this.partTimeDate = partTimeDate;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getDeadlineTime() {
+        return deadlineTime;
+    }
+
+    public void setDeadlineTime(String deadlineTime) {
+        this.deadlineTime = deadlineTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public String getPayType() {

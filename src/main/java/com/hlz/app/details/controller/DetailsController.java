@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/details")
+@RequestMapping(value = "/Details")
 public class DetailsController {
     private Logger logger = LoggerFactory.getLogger(DetailsController.class);
     private String logtitle = "招聘信息详细数据接口|#";
@@ -21,7 +21,7 @@ public class DetailsController {
     @Autowired
     private DetailsServiceImpl detailsServiceImpl;
     @ResponseBody
-    @GetMapping("/detailsdata")
+    @GetMapping("/DetailsData")
     public TestReponseDto FindDetails(String merchant_id){
     System.out.println(merchant_id);
         TestReponseDto dto =new TestReponseDto();
