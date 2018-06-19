@@ -54,10 +54,10 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-debug: true
+
 logging:
   level:
-    org.springframework.web: debug
+    org.springframework.web: info
     com.hlz.app: DEBUG
   pattern:
       console: "%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"

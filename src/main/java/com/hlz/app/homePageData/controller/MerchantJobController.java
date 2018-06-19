@@ -1,9 +1,8 @@
-package com.hlz.app.merchant_info.controller;
+package com.hlz.app.homePageData.controller;
 
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.homePageData.controller.HomePageDataController;
-import com.hlz.app.merchant_info.model.MerchantJob;
-import com.hlz.app.merchant_info.service.MerchantJobService;
+import com.hlz.app.homePageData.model.MerchantJob;
+import com.hlz.app.homePageData.service.MerchantJobService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

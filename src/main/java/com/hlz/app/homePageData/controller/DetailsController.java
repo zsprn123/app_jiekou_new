@@ -1,7 +1,7 @@
-package com.hlz.app.details.controller;
+package com.hlz.app.homePageData.controller;
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.details.model.DetailsDto;
-import com.hlz.app.details.service.impl.DetailsServiceImpl;
+import com.hlz.app.homePageData.model.DetailsDto;
+import com.hlz.app.homePageData.service.impl.DetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

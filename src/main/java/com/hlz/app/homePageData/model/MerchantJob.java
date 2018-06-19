@@ -1,4 +1,4 @@
-package com.hlz.app.merchant_info.model;
+package com.hlz.app.homePageData.model;
 
 import java.io.Serializable;
 
@@ -47,12 +47,6 @@ public class MerchantJob implements Serializable {
     private String insertDate;
 
     /**
-     * 兼职日期
-     * @return
-     */
-    private String partTimeDate;
-
-    /**
      * 结算方式
      * @return
      */
@@ -63,6 +57,24 @@ public class MerchantJob implements Serializable {
      * @return
      */
     private String payMoney;
+
+    /**
+     * 开始时间
+     * @return
+     */
+    private String startTime;
+
+    /**
+     * 结束时间
+     * @return
+     */
+    private String endTime;
+
+    /**
+     * 截止时间
+     * @return
+     */
+    private String deadLineTime;
 
     public String getMerchantId() {
         return merchantId;
@@ -144,14 +156,6 @@ public class MerchantJob implements Serializable {
         this.insertDate = insertDate;
     }
 
-    public String getPartTimeDate() {
-        return partTimeDate;
-    }
-
-    public void setPartTimeDate(String partTimeDate) {
-        this.partTimeDate = partTimeDate;
-    }
-
     public String getPayType() {
         return payType;
     }
@@ -166,5 +170,29 @@ public class MerchantJob implements Serializable {
 
     public void setPayMoney(String payMoney) {
         this.payMoney = payMoney;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getDeadLineTime() {
+        return deadLineTime;
+    }
+
+    public void setDeadLineTime(String deadLineTime) {
+        this.deadLineTime = deadLineTime;
     }
 }

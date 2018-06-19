@@ -1,8 +1,8 @@
-package com.hlz.app.details.service.impl;
+package com.hlz.app.homePageData.service.impl;
 
-import com.hlz.app.details.dao.DetailsDao;
-import com.hlz.app.details.model.DetailsDto;
-import com.hlz.app.details.service.DetailsService;
+import com.hlz.app.homePageData.dao.DetailsDao;
+import com.hlz.app.homePageData.model.DetailsDto;
+import com.hlz.app.homePageData.service.DetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

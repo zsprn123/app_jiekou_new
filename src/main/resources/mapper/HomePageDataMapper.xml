@@ -4,9 +4,11 @@
     <sql id="TABLE_COLUMN">
         T.job,
         T.merchant_address merchantAddress,
-        T.part_time_date partTimeDate,
+
         T.pay_money payMoney,
-        <!--T.settlement,-->
+        T.start_time startTime,
+        T.end_time   endTime,
+        T.deadline_time deadLineTime,
 
         T.business_licens businessLicens,
         T.merchant_name merchantName,

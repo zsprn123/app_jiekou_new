@@ -1,7 +1,6 @@
-package com.hlz.app.details.dao;
+package com.hlz.app.homePageData.dao;
 
-import com.hlz.app.details.model.DetailsDto;
-import org.apache.ibatis.annotations.Param;
+import com.hlz.app.homePageData.model.DetailsDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

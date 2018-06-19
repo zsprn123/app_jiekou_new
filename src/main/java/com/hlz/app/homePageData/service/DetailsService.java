@@ -1,6 +1,6 @@
-package com.hlz.app.details.service;
+package com.hlz.app.homePageData.service;
 
-import com.hlz.app.details.model.DetailsDto;
+import com.hlz.app.homePageData.model.DetailsDto;
 
 import java.util.List;
 

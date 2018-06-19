@@ -1,8 +1,8 @@
-package com.hlz.app.merchant_info.service.impl;
+package com.hlz.app.homePageData.service.impl;
 
-import com.hlz.app.merchant_info.dao.MerchantJobDao;
-import com.hlz.app.merchant_info.model.MerchantJob;
-import com.hlz.app.merchant_info.service.MerchantJobService;
+import com.hlz.app.homePageData.dao.MerchantJobDao;
+import com.hlz.app.homePageData.model.MerchantJob;
+import com.hlz.app.homePageData.service.MerchantJobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
