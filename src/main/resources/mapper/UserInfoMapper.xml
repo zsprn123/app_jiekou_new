@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.selectUserInfo.dao.UserInfoDao">
+    <sql id="TABLE_COLUMN">
+        T.user_name userName,
+        T.sex sex,
+        T.user_age userAge,
+        T.user_address userAddress ,
+        T.phone_num phoneNum,
+        T.user_mail userMail,
+        T.user_height userHeight,
+        T.user_weight userWeight,
+        T.university_name universityName,
+        T.user_education userEducation,
+        T.user_profession userProfession,
+        T.user_paperwork userPaperwork,
+        T.user_health userHealth
+    </sql>
+
+    <select id="selectUserInfoList"  parameterType="java.util.Map"  resultType="com.hlz.app.selectUserInfo.model.UserInfoDto">
+        SELECT
+        <include refid="TABLE_COLUMN"/>
+        FROM user_info T
+        WHERE T.user_uuid = #{id}
+    </select>
+
+</mapper>

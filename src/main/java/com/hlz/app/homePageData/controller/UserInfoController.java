@@ -1,7 +1,8 @@
 package com.hlz.app.homePageData.controller;
+
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.homePageData.model.DetailsDto;
-import com.hlz.app.homePageData.service.impl.DetailsServiceImpl;
+import com.hlz.app.homePageData.model.UserInfoDto;
+import com.hlz.app.homePageData.service.impl.UserInfoServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,23 +10,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/details")
-public class DetailsController {
-    private Logger logger = LoggerFactory.getLogger(DetailsController.class);
-    private String logtitle = "招聘信息详细数据接口|#";
+@RequestMapping(value = "/dserInfo")
+public class UserInfoController {
+    private Logger logger = LoggerFactory.getLogger(UserInfoController.class);
+    private String logtitle = "用户信息接口|#";
 
     @Autowired
-    private DetailsServiceImpl detailsServiceImpl;
+    private UserInfoServiceImpl userInfoService;
     @ResponseBody
-    @GetMapping("/detailsData")
-    public TestReponseDto FindDetails(String merchant_id){
-        System.out.println(merchant_id);
+    @GetMapping("/dserInfoData")
+    public TestReponseDto FindUserInfo(String user_uuid){
         TestReponseDto dto =new TestReponseDto();
         try{
-            List<DetailsDto> list = detailsServiceImpl.FindDetails(merchant_id);
+            List<UserInfoDto> list = userInfoService.FindUserInfo(user_uuid);
             dto.setData(list);
             dto.setMessage("操作成功");
             dto.setSuccess("1");
