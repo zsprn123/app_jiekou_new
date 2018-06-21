@@ -4,7 +4,6 @@
     <sql id="TABLE_COLUMN">
         T.merchant_name merchantName,
         T.merchant_address merchantAddress,
-        T.business_licens businessLicens,
         T.phone_num phoneNum,
         T.principal ,
         T.job,
