@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.user.dao.ResumeDao" >
+    <sql id="BASE_TABLE">
+    resume
+    </sql>
+
+    <sql id="BASE_COLUMN">
+    user_uuid,university_name,user_profession,user_education,admission_time,graduation_time,merchant_name,start_time,
+    end_time,job_type,work_time,all_time_work,skill_medal,related_introduction,self_evaluation
+    </sql>
+
+    <insert id="insertresume" parameterType="com.hlz.app.user.model.ResumeDto">
+        INSERT INTO
+        resume
+        (
+        user_uuid,university_name
+        )
+        VALUES  (
+        #{userUuid},#{universityName})
+    </insert>
+
+</mapper>
