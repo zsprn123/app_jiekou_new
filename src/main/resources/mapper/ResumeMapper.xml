@@ -14,10 +14,13 @@
         INSERT INTO
         resume
         (
-        user_uuid,university_name
+        user_uuid,university_name,user_profession,user_education,admission_time,graduation_time,merchant_name,start_time,
+        end_time,job_type,work_time,all_time_work,skill_medal,related_introduction,self_evaluation
         )
         VALUES  (
-        #{userUuid},#{universityName})
+        #{userUuid},#{universityName},#{userProfession},#{userEducation},#{admissionTime},#{graduationTime},
+        #{merchantName},#{startTime},#{endTime},#{jobType},#{workTime},#{allTimeWork},
+        #{skillMedal},#{relatedIntroduction},#{selfEvaluation})
     </insert>
 
 </mapper>
