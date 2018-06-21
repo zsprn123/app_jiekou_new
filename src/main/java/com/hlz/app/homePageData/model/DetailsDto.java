@@ -2,7 +2,6 @@ package com.hlz.app.homePageData.model;
 public class DetailsDto {
     private String merchantName;
     private String merchantAddress;
-    private String businessLicens;
     private String phoneNum;
     private String principal;
     private String job;
@@ -29,14 +28,6 @@ public class DetailsDto {
 
     public void setMerchantAddress(String merchantAddress) {
         this.merchantAddress = merchantAddress;
-    }
-
-    public String getBusinessLicens() {
-        return businessLicens;
-    }
-
-    public void setBusinessLicens(String businessLicens) {
-        this.businessLicens = businessLicens;
     }
 
     public String getPhoneNum() {
