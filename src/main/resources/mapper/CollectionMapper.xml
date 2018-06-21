@@ -5,6 +5,9 @@
     collection
     </sql>
 
+    <sql id="BASE_COLUMN">
+        user_uuid,merchant_id,modif_time
+    </sql>
     <insert id="insertCollection" parameterType="com.hlz.app.user.model.CollectionDto">
         INSERT INTO
         collection
@@ -14,5 +17,14 @@
         VALUES  (
         #{userUuid},#{merchantId})
     </insert>
+
+
+    <select id="selectCollection" resultType="com.hlz.app.user.model.CollectionDto">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        collection T
+        WHERE T.user_uuid = #{userUuid}
+    </select>
 
 </mapper>
