@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.user.dao.CollectionDao" >
+    <sql id="BASE_TABLE">
+    collection
+    </sql>
+
+    <insert id="insertCollection" parameterType="com.hlz.app.user.model.CollectionDto">
+        INSERT INTO
+        collection
+        (
+          user_uuid,merchant_id
+        )
+        VALUES  (
+        #{userUuid},#{merchantId})
+    </insert>
+
+</mapper>
