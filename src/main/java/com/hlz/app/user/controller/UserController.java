@@ -1,6 +1,7 @@
 package com.hlz.app.user.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.hlz.app.user.model.UserInfo;
 import com.hlz.app.user.service.UserService;
@@ -8,10 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +24,8 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("/add")
-    public int addUser(UserInfo userInfo){
+    public int addUser(@RequestBody UserInfo userInfo){
+
         return userService.addUser(userInfo);
     }
 
@@ -42,5 +41,14 @@ public class UserController {
             logger.info(logtitle+"查询失败,"+"异常："+e);
         }
         return json;
+    }
+
+    public static void main(String[] args){
+        UserInfo user =new UserInfo();
+        user.setUserId(123);
+        user.setPassword("4444");
+        user.setUserName("zhangsan");
+        user.setPhone("13511112222");
+        System.out.println(JSON.toJSONString(user));
     }
 }
