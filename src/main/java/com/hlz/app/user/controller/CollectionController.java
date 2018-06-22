@@ -1,10 +1,8 @@
 package com.hlz.app.user.controller;
 
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.homePageData.model.DetailsDto;
 import com.hlz.app.user.model.CollectionDto;
 import com.hlz.app.user.service.CollectionService;
-import com.hlz.app.user.service.impl.CollectionServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ public class CollectionController {
 
     @Autowired
     private CollectionService collectionService;
-    private CollectionServiceImpl collectionServiceimpl;
     @ResponseBody
     @PostMapping("/insertCollection")
     public TestReponseDto InsertCollection(@RequestBody CollectionDto collectionDto){
@@ -46,7 +43,7 @@ public class CollectionController {
     public TestReponseDto FindCollection(String user_uuid){
         TestReponseDto dto =new TestReponseDto();
         try{
-            List<CollectionDto> list = collectionServiceimpl.FindCollection(user_uuid);
+            List<CollectionDto> list = collectionService.FindCollection(user_uuid);
             dto.setData(list);
             dto.setMessage("操作成功");
             dto.setSuccess("1");

@@ -6,25 +6,29 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-        user_uuid,merchant_id,modif_time
+        T.user_uuid userUuid,
+        T.merchant_id merchantId,
+        T.merchant_name merchantName,
+        T.modif_time modifTime
     </sql>
     <insert id="insertCollection" parameterType="com.hlz.app.user.model.CollectionDto">
         INSERT INTO
         collection
         (
-          user_uuid,merchant_id
+          T.user_uuid,T.merchant_name
         )
         VALUES  (
-        #{userUuid},#{merchantId})
+        #{userUuid},#{merchantName})
     </insert>
 
 
-    <select id="selectCollection" resultType="com.hlz.app.user.model.CollectionDto">
+    <select id="selectCollection" parameterType="java.util.Map" resultType="com.hlz.app.user.model.CollectionDto">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM
         collection T
         WHERE T.user_uuid = #{userUuid}
     </select>
+
 
 </mapper>
