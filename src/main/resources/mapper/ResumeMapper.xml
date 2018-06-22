@@ -10,7 +10,7 @@
     end_time,job_type,work_time,all_time_work,skill_medal,related_introduction,self_evaluation
     </sql>
 
-    <insert id="insertresume" parameterType="com.hlz.app.user.model.ResumeDto">
+    <insert id="insertResume" parameterType="com.hlz.app.user.model.ResumeDto">
         INSERT INTO
         resume
         (
@@ -22,5 +22,13 @@
         #{merchantName},#{startTime},#{endTime},#{jobType},#{workTime},#{allTimeWork},
         #{skillMedal},#{relatedIntroduction},#{selfEvaluation})
     </insert>
+
+    <select id="selectResume" parameterType="java.util.Map" resultType="com.hlz.app.user.model.ResumeDto">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        resume T
+        WHERE T.user_uuid = #{userUuid}
+    </select>
 
 </mapper>

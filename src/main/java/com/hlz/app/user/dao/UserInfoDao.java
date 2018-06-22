@@ -1,7 +1,7 @@
-package com.hlz.app.homePageData.dao;
+package com.hlz.app.user.dao;
 
 
-import com.hlz.app.homePageData.model.UserInfoDto;
+import com.hlz.app.user.model.UserInfoDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.hlz.app.homePageData.controller;
+package com.hlz.app.user.controller;
 
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.homePageData.model.UserInfoDto;
-import com.hlz.app.homePageData.service.impl.UserInfoServiceImpl;
+import com.hlz.app.user.model.UserInfoDto;
+import com.hlz.app.user.service.impl.UserInfoServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

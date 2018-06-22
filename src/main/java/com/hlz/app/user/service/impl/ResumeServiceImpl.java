@@ -5,7 +5,9 @@ import com.hlz.app.user.model.ResumeDto;
 import com.hlz.app.user.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("ResumeService")
 public  class ResumeServiceImpl implements ResumeService {
@@ -16,6 +18,14 @@ public  class ResumeServiceImpl implements ResumeService {
     public void InsertResume(ResumeDto resumeDto) {
 
         resumeDao.insertresume(resumeDto);
+    }
+
+    @Override
+    public List<ResumeDto> FindResume(String user_uuid) {
+        Map<String,Object> queryMap = new HashMap<String,Object>();
+        queryMap.put("userUuid",user_uuid);
+        List<ResumeDto> list = resumeDao.selectResume(queryMap);
+        return list;
     }
 
 }

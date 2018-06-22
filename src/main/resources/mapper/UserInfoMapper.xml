@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hlz.app.homePageData.dao.UserInfoDao">
+<mapper namespace="com.hlz.app.user.dao.UserInfoDao">
     <sql id="TABLE_COLUMN">
         T.user_name userName,
         T.sex sex,
@@ -17,7 +17,7 @@
         T.user_health userHealth
     </sql>
 
-    <select id="selectUserInfoList"  parameterType="java.util.Map"  resultType="com.hlz.app.homePageData.model.UserInfoDto">
+    <select id="selectUserInfoList"  parameterType="java.util.Map"  resultType="com.hlz.app.user.model.UserInfoDto">
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM user_info T
