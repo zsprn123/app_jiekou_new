@@ -4,6 +4,15 @@ public class CollectionDto {
     private String merchantName;
     private String modifTime;
     private String merchantId;
+    private String collectionStatus;
+
+    public String getCollectionStatus() {
+        return collectionStatus;
+    }
+
+    public void setCollectionStatus(String collectionStatus) {
+        this.collectionStatus = collectionStatus;
+    }
 
     public String getMerchantId() {
         return merchantId;

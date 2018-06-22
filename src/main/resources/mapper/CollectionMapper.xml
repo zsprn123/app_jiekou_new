@@ -15,7 +15,7 @@
         INSERT INTO
         collection
         (
-          T.user_uuid,T.merchant_name
+          T.user_uuid,T.merchant_name,T.collection_status
         )
         VALUES  (
         #{userUuid},#{merchantName})
