@@ -22,5 +22,4 @@ public  class DetailsServiceImpl implements DetailsService {
         List<DetailsDto> list = detailsDao.selectDetailsDataList(queryMap);
         return list;
     }
-
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hlz.app.user.dao.CollectionDao" >
+    <sql id="BASE_TABLE">
+    collection
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        T.user_uuid userUuid,
+        T.merchant_id merchantId,
+        T.merchant_name merchantName,
+        T.modif_time modifTime
+    </sql>
+    <insert id="insertCollection" parameterType="com.hlz.app.user.model.CollectionDto">
+        INSERT INTO
+        collection
+        (
+          T.user_uuid,T.merchant_name,T.collection_status
+        )
+        VALUES  (
+        #{userUuid},#{merchantName})
+    </insert>
+
+
+    <select id="selectCollection" parameterType="java.util.Map" resultType="com.hlz.app.user.model.CollectionDto">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        collection T
+        WHERE T.user_uuid = #{userUuid}
+    </select>
+
+
+</mapper>

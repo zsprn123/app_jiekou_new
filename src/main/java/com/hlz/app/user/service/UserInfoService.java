@@ -1,6 +1,6 @@
-package com.hlz.app.homePageData.service;
+package com.hlz.app.user.service;
 
-import com.hlz.app.homePageData.model.UserInfoDto;
+import com.hlz.app.user.model.UserInfoDto;
 
 import java.util.List;
 

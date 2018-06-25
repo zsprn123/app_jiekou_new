@@ -1,4 +1,4 @@
-package com.hlz.app.homePageData.model;
+package com.hlz.app.user.model;
 public class UserInfoDto {
     private String userName;
     private String sex;

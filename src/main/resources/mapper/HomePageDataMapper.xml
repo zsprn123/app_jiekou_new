@@ -17,7 +17,9 @@
         <include refid="TABLE_COLUMN"/>
         FROM merchant_info T
         <!--ORDER BY t.insert_date -->
-
+        <if test="selectinfo != null and selectinfo !=''">
+            and (T.phone_num like #{selectinfo} or  )
+        </if>
     </select>
 
 </mapper>

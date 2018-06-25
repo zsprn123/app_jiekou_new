@@ -1,38 +1,31 @@
 package com.hlz.app.user.controller;
 
 import com.hlz.app.common.TestReponseDto;
-import com.hlz.app.user.dao.ResumeDao;
 import com.hlz.app.user.model.CollectionDto;
-import com.hlz.app.user.model.ResumeDto;
-import com.hlz.app.user.service.ResumeService;
+import com.hlz.app.user.service.CollectionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @Controller
-@RequestMapping("/resume")
-public class ResumeController {
-    private Logger logger = LoggerFactory.getLogger(ResumeController.class);
-    private String logtitle = "简历插入接口|#";
+@RequestMapping("/collection")
+public class CollectionController {
+    private Logger logger = LoggerFactory.getLogger(CollectionController.class);
+    private String logtitle = "收藏接口|#";
 
     @Autowired
-    private ResumeService resumeService;
-
+    private CollectionService collectionService;
     @ResponseBody
-    @PostMapping("/insertResume")
-    public TestReponseDto InsertResume(@RequestBody ResumeDto resumeDto){
+    @PostMapping("/insertCollection")
+    public TestReponseDto InsertCollection(@RequestBody CollectionDto collectionDto){
 
         TestReponseDto dto = new TestReponseDto();
-        String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
-        resumeDto.setUserUuid(uuid);
         try{
-             resumeService.InsertResume(resumeDto);
+                collectionService.InsertCollection(collectionDto);
                 dto.setMessage("插入成功");
                 dto.setSuccess("1");
                 logger.info(logtitle+"插入成功");
@@ -44,12 +37,13 @@ public class ResumeController {
         }
         return dto;
         }
+
     @ResponseBody
-    @GetMapping("/selectResume")
-    public TestReponseDto FindResume(String user_uuid){
+    @GetMapping("/selectCollection")
+    public TestReponseDto FindCollection(String user_uuid){
         TestReponseDto dto =new TestReponseDto();
         try{
-            List<ResumeDto> list = resumeService.FindResume(user_uuid);
+            List<CollectionDto> list = collectionService.FindCollection(user_uuid);
             dto.setData(list);
             dto.setMessage("操作成功");
             dto.setSuccess("1");
@@ -62,5 +56,6 @@ public class ResumeController {
         }
         return dto;
     }
+
 
 }
