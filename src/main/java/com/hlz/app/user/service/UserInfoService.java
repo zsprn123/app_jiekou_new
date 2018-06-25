@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface UserInfoService {
     List<UserInfoDto> FindUserInfo(String user_uuid);
+
+    public int addUserInfo(UserInfoDto userInfo);
 }

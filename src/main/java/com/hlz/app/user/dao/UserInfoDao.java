@@ -10,4 +10,6 @@ import java.util.Map;
 @Component
 public interface UserInfoDao {
     List<UserInfoDto> selectUserInfoList(Map<String, Object> queryMap);
+
+    int insert(UserInfoDto record);//方法名
 }

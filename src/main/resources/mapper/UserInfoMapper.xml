@@ -17,11 +17,19 @@
         T.user_health userHealth
     </sql>
 
+
     <select id="selectUserInfoList"  parameterType="java.util.Map"  resultType="com.hlz.app.user.model.UserInfoDto">
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM user_info T
         WHERE T.user_uuid = #{id}
     </select>
+
+    <insert id="insert"  parameterType="com.hlz.app.user.model.UserInfoDto">
+    insert into user_info  (user_uuid,user_name,sex,user_age,user_address,phone_num,user_mail,user_height,user_weight,
+    university_name,user_education,user_profession,user_paperwork,user_health)
+    values (#{uuid},#{userName},#{sex},#{userAge},#{userAddress},#{phoneNum},#{userMail},#{userHeight},#{userWeight},
+    #{universityName},#{userEducation},#{userProfession},#{userPaperwork},#{userHealth})
+    </insert>
 
 </mapper>

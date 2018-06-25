@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service("UserInfoService")
 public  class UserInfoServiceImpl implements UserInfoService {
@@ -21,6 +22,13 @@ public  class UserInfoServiceImpl implements UserInfoService {
         queryMap.put("id",user_uuid);
         List<UserInfoDto> list = userInfoDao.selectUserInfoList(queryMap);
         return list;
+    }
+
+    @Override
+    public int addUserInfo(UserInfoDto userInfo) {
+        String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
+        userInfo.setUuid(uuid);
+        return userInfoDao.insert(userInfo);
     }
 
 }
