@@ -9,18 +9,17 @@
     userId,userName,password,phone
     </sql>
 
-
     <insert id="insert" parameterType="com.hlz.app.user.model.UserInfo">
         INSERT INTO
         t_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            userName,password,
+            userId,userName,password,
             <if test="phone != null">
                 phone,
             </if>
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{userName, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR},
+            #{userId},#{userName, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR},
             <if test="phone != null">
                 #{phone, jdbcType=VARCHAR},
             </if>

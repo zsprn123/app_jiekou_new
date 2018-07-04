@@ -4,23 +4,22 @@
     <sql id="TABLE_COLUMN">
         T.job,
         T.merchant_address merchantAddress,
-
         T.pay_money payMoney,
         T.start_time startTime,
         T.end_time   endTime,
         T.deadline_time deadLineTime,
-
-        T.business_licens businessLicens,
         T.merchant_name merchantName,
         T.merchant_id merchantId
     </sql>
-    
+
     <select id="selectHomePageDateList"   resultType="com.hlz.app.homePageData.model.HomePageDataDto">
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM merchant_info T
         <!--ORDER BY t.insert_date -->
-
+        <if test="selectinfo != null and selectinfo !=''">
+            and (T.phone_num like #{selectinfo} or  )
+        </if>
     </select>
 
 </mapper>

@@ -3,6 +3,7 @@
 <mapper namespace="com.hlz.app.homePageData.dao.DetailsDao">
     <sql id="TABLE_COLUMN">
         T.merchant_name merchantName,
+        C.collection_status collectionStatus,
         T.merchant_address merchantAddress,
         T.phone_num phoneNum,
         T.principal ,
@@ -21,7 +22,9 @@
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM merchant_info T
+        LEFT JOIN collection C
+        ON T.merchant_id = C.merchant_id
         WHERE T.merchant_id = #{id}
-    </select>
+      </select>
 
 </mapper>

@@ -13,6 +13,15 @@ public class DetailsDto {
     private String endTime;
     private String payType;
     private String payMoney;
+    private String collectionStatus;
+
+    public String getCollectionStatus() {
+        return collectionStatus;
+    }
+
+    public void setCollectionStatus(String collectionStatus) {
+        this.collectionStatus = collectionStatus;
+    }
 
     public String getMerchantName() {
         return merchantName;
