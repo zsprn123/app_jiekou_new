@@ -25,7 +25,6 @@ public class MerchantJobController {
     @ResponseBody
     @GetMapping("/insertData")
     public TestReponseDto selectList(MerchantJob merchantJob){
-
         TestReponseDto dto = new TestReponseDto();
         String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
         merchantJob.setMerchantId(uuid);

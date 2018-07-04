@@ -11,4 +11,5 @@ import java.util.Map;
 public interface CollectionDao {
    void insertCollection(CollectionDto collectionDto);
    List<CollectionDto> selectCollection(Map<String ,Object> queryMap);
+   void updateCollection(CollectionDto collectionDto);
 }

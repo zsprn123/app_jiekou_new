@@ -27,4 +27,8 @@ public  class CollectionServiceImpl implements CollectionService {
         return list;
     }
 
+    @Override
+    public void UpdateCollection(CollectionDto collectionDto) {
+        collectionDao.updateCollection(collectionDto);
+    }
 }

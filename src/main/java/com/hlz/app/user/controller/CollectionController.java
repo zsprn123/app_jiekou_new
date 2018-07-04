@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/collection")
@@ -22,13 +23,14 @@ public class CollectionController {
     @ResponseBody
     @PostMapping("/insertCollection")
     public TestReponseDto InsertCollection(@RequestBody CollectionDto collectionDto){
-
         TestReponseDto dto = new TestReponseDto();
+        String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
+        collectionDto.setUserUuid(uuid);
         try{
-                collectionService.InsertCollection(collectionDto);
-                dto.setMessage("插入成功");
-                dto.setSuccess("1");
-                logger.info(logtitle+"插入成功");
+            collectionService.InsertCollection(collectionDto);
+            dto.setMessage("插入成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"插入成功");
         }catch (Exception e){
             e.printStackTrace();
             dto.setMessage("插入失败");
@@ -36,7 +38,7 @@ public class CollectionController {
             logger.info(logtitle+"插入失败,"+"异常："+e);
         }
         return dto;
-        }
+    }
 
     @ResponseBody
     @GetMapping("/selectCollection")
@@ -56,6 +58,22 @@ public class CollectionController {
         }
         return dto;
     }
-
+    @ResponseBody
+    @PostMapping("/insertCollection")
+    public TestReponseDto UpdateCollection(@RequestBody CollectionDto collectionDto){
+        TestReponseDto dto = new TestReponseDto();
+        try{
+            collectionService.UpdateCollection(collectionDto);
+            dto.setMessage("插入成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"插入成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            dto.setMessage("插入失败");
+            dto.setSuccess("-1");
+            logger.info(logtitle+"插入失败,"+"异常："+e);
+        }
+        return dto;
+    }
 
 }

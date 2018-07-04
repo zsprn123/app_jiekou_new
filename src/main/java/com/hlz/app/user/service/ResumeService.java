@@ -9,4 +9,5 @@ import java.util.List;
 public interface ResumeService {
      List<ResumeDto> FindResume(String user_uuid);
      void InsertResume(ResumeDto resumeDto);
+     void UpdateResume(ResumeDto resumeDto);
 }

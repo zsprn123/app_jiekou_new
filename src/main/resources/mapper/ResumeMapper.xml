@@ -6,8 +6,21 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-    user_uuid,university_name,user_profession,user_education,admission_time,graduation_time,merchant_name,start_time,
-    end_time,job_type,work_time,all_time_work,skill_medal,related_introduction,self_evaluation
+    T.user_uuid userUuid,
+    T.university_name universityName,
+    T.user_profession userProfession,
+    T.user_education userEducation,
+    T.admission_time admissionTime,
+    T.graduation_time graduationTime,
+    T.merchant_name merchantName,
+    T.start_time startTime,
+    T.end_time endTime,
+    T.job_type jobType,
+    T.work_time workTime,
+    T.all_time_work allTimeWork,
+    T.skill_medal skillMedal,
+    T.related_introduction relatedIntroduction,
+    T.self_evaluation selfEvaluation
     </sql>
 
     <insert id="insertResume" parameterType="com.hlz.app.user.model.ResumeDto">
@@ -30,5 +43,52 @@
         resume T
         WHERE T.user_uuid = #{userUuid}
     </select>
-
+    <update id="updateResume" parameterType="com.hlz.app.user.model.ResumeDto">
+        UPDATE resume
+        <set>
+            <if test="universityName != null">
+                university_name = #{universityName,jdbcType=VARCHAR},
+            </if>
+            <if test="userProfession != null">
+                user_profession = #{userProfession,jdbcType=VARCHAR},
+            </if>
+            <if test="userEducation != null">
+                user_education = #{userEducation,jdbcType=VARCHAR},
+            </if>
+            <if test="admissionTime != null">
+                admission_time = #{admissionTime,jdbcType=VARCHAR},
+            </if>
+            <if test="graduationTime != null">
+                graduation_time = #{graduationTime,jdbcType=VARCHAR},
+            </if>
+            <if test="merchantName != null">
+                merchant_name = #{merchantName,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=VARCHAR},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=VARCHAR},
+            </if>
+            <if test="jobType != null">
+                job_type = #{jobType,jdbcType=VARCHAR},
+            </if>
+            <if test="workTime != null">
+                work_time = #{workTime,jdbcType=VARCHAR},
+            </if>
+            <if test="allTimeWork != null">
+                all_time_work = #{allTimeWork,jdbcType=VARCHAR},
+            </if>
+            <if test="skillMedal != null">
+                skill_medal = #{skillMedal,jdbcType=VARCHAR},
+            </if>
+            <if test="relatedIntroduction != null">
+                related_introduction = #{relatedIntroduction,jdbcType=VARCHAR},
+            </if>
+            <if test="selfEvaluation != null">
+                self_evaluation = #{selfEvaluation,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE user_uuid = #{userUuid,jdbcType=VARHCAR}
+    </update>
 </mapper>
