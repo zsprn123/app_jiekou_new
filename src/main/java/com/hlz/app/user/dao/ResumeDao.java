@@ -1,6 +1,5 @@
 package com.hlz.app.user.dao;
 
-import com.hlz.app.user.model.CollectionDto;
 import com.hlz.app.user.model.ResumeDto;
 import org.springframework.stereotype.Component;
 
@@ -11,4 +10,5 @@ import java.util.Map;
 public interface ResumeDao {
    void insertResume(ResumeDto resumeDto);
    List<ResumeDto> selectResume(Map<String ,Object> queryMap);
+   void updateResume(ResumeDto resumeDto);
 }

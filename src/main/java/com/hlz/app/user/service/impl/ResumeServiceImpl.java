@@ -16,7 +16,6 @@ public  class ResumeServiceImpl implements ResumeService {
 
     @Override
     public void InsertResume(ResumeDto resumeDto) {
-
         resumeDao.insertResume(resumeDto);
     }
 
@@ -28,4 +27,8 @@ public  class ResumeServiceImpl implements ResumeService {
         return list;
     }
 
+    @Override
+    public void UpdateResume(ResumeDto resumeDto) {
+        resumeDao.updateResume(resumeDto);
+    }
 }

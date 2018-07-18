@@ -32,10 +32,10 @@ public class ResumeController {
         String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
         resumeDto.setUserUuid(uuid);
         try{
-             resumeService.InsertResume(resumeDto);
-                dto.setMessage("插入成功");
-                dto.setSuccess("1");
-                logger.info(logtitle+"插入成功");
+            resumeService.InsertResume(resumeDto);
+            dto.setMessage("插入成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"插入成功");
         }catch (Exception e){
             e.printStackTrace();
             dto.setMessage("插入失败");
@@ -44,6 +44,7 @@ public class ResumeController {
         }
         return dto;
         }
+
     @ResponseBody
     @GetMapping("/selectResume")
     public TestReponseDto FindResume(String user_uuid){
@@ -62,5 +63,21 @@ public class ResumeController {
         }
         return dto;
     }
-
+    @ResponseBody
+    @PostMapping("/updateResume")
+    public TestReponseDto UpdateResume(@RequestBody ResumeDto resumeDto){
+        TestReponseDto dto = new TestReponseDto();
+        try{
+            resumeService.UpdateResume(resumeDto);
+            dto.setMessage("插入成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"插入成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            dto.setMessage("插入失败");
+            dto.setSuccess("-1");
+            logger.info(logtitle+"插入失败,"+"异常："+e);
+        }
+        return dto;
+    }
 }

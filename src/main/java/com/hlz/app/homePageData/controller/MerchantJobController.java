@@ -1,6 +1,5 @@
 package com.hlz.app.homePageData.controller;
 
-import com.hlz.app.common.ReponseDto;
 import com.hlz.app.common.TestReponseDto;
 import com.hlz.app.homePageData.model.MerchantJob;
 import com.hlz.app.homePageData.service.MerchantJobService;
@@ -25,9 +24,8 @@ public class MerchantJobController {
 
     @ResponseBody
     @GetMapping("/insertData")
-    public ReponseDto selectList(MerchantJob merchantJob){
-
-        ReponseDto dto = new ReponseDto();
+    public TestReponseDto selectList(MerchantJob merchantJob){
+        TestReponseDto dto = new TestReponseDto();
         String uuid = UUID.randomUUID().toString().replace("-","").toLowerCase();
         merchantJob.setMerchantId(uuid);
 //        JSON json = JSON.parseObject(data);

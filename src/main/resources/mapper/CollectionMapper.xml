@@ -29,6 +29,16 @@
         collection T
         WHERE T.user_uuid = #{userUuid}
     </select>
-
-
+    <update id="updateCollection" parameterType="com.hlz.app.user.model.CollectionDto">
+        UPDATE collection
+        <set>
+            <if test="merchantId != null">
+                merchant_id = #{merchantId,jdbcType=VARCHAR},
+            </if>
+            <if test="merchantName != null">
+                merchant_name = #{merchantName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE user_uuid = #{userUuid,jdbcType=VARCHAR}
+    </update>
 </mapper>
