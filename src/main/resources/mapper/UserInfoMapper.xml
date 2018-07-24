@@ -5,7 +5,7 @@
         T.user_name userName,
         T.sex sex,
         T.user_age userAge,
-        T.user_address userAddress ,
+        T.user_address userAddress,
         T.phone_num phoneNum,
         T.user_mail userMail,
         T.user_height userHeight,
@@ -16,12 +16,66 @@
         T.user_paperwork userPaperwork,
         T.user_health userHealth
     </sql>
-
+    <insert id="insertUserInfoList" parameterType="com.hlz.app.user.model.UserInfoDto">
+        INSERT INTO
+        user_info
+        (
+        user_name,sex,user_age,user_address,phone_num,user_mail,
+        user_height,user_weight,university_name,user_education,
+        user_profession,user_paperwork,user_health
+        )
+        VALUES (#{userName},#{sex},#{userAge},#{phoneNum},#{userMail},#{userHeight},#{userWeight},
+        #{universityName},#{userEducation},#{userProfession},#{userPaperwork},#{userHealth})
+    </insert>
     <select id="selectUserInfoList"  parameterType="java.util.Map"  resultType="com.hlz.app.user.model.UserInfoDto">
         SELECT
         <include refid="TABLE_COLUMN"/>
         FROM user_info T
         WHERE T.user_uuid = #{id}
     </select>
-
+    <update id="updateUserInfoList" parameterType="com.hlz.app.user.model.UserInfoDto">
+        UPDATE user_info
+        <set>
+            <if test="userName !=null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="userAge != null">
+                user_age = #{userAge,jdbcType=VARCHAR},
+            </if>
+            <if test="userAddress != null">
+                user_address = #{userAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNum != null">
+                phone_num = #{phoneNum,jdbcType=VARCHAR},
+            </if>
+            <if test="userMail != null">
+                user_mail = #{userMail,jdbcType=VARCHAR},
+            </if>
+            <if test="userHeight != null">
+                user_height = #{userHeight,jdbcType=VARCAHR},
+            </if>
+            <if test="userWeight != null">
+                user_weight = #{userWeight,jdbcType=VARCHAR},
+            </if>
+            <if test="universityName != null">
+                university_name = #{universityName,jdbcType=VARCHAR},
+            </if>
+            <if test="userEducation != null">
+                user_education = #{userEducation,jdbcType=VARCHAR},
+            </if>
+            <if test="userProfession != null">
+                userProfession = #{userProfession,jdbcType=VARCHAR},
+            </if>
+            <if test="userPaperwork != null">
+                user_paperwork = #{userPaperwork,jdbcType=VARCHAR},
+            </if>
+            <if test="userHealth != null">
+                user_health = #{userHealth,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE user_uuid = #{userUuid,jdbcType=VARCHAR}
+    </update>
 </mapper>

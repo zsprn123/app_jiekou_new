@@ -69,14 +69,14 @@ public class ResumeController {
         TestReponseDto dto = new TestReponseDto();
         try{
             resumeService.UpdateResume(resumeDto);
-            dto.setMessage("插入成功");
+            dto.setMessage("更新成功");
             dto.setSuccess("1");
-            logger.info(logtitle+"插入成功");
+            logger.info(logtitle+"更新成功");
         }catch (Exception e){
             e.printStackTrace();
-            dto.setMessage("插入失败");
+            dto.setMessage("更新失败");
             dto.setSuccess("-1");
-            logger.info(logtitle+"插入失败,"+"异常："+e);
+            logger.info(logtitle+"更新失败,"+"异常："+e);
         }
         return dto;
     }

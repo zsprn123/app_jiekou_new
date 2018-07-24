@@ -22,7 +22,6 @@
     T.related_introduction relatedIntroduction,
     T.self_evaluation selfEvaluation
     </sql>
-
     <insert id="insertResume" parameterType="com.hlz.app.user.model.ResumeDto">
         INSERT INTO
         resume
@@ -89,6 +88,6 @@
                 self_evaluation = #{selfEvaluation,jdbcType=VARCHAR},
             </if>
         </set>
-        WHERE user_uuid = #{userUuid,jdbcType=VARHCAR}
+        WHERE user_uuid = #{userUuid,jdbcType=VARCHAR}
     </update>
 </mapper>

@@ -17,10 +17,19 @@ public  class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public List<UserInfoDto> FindUserInfo(String user_uuid) {
-        Map<String,Object> queryMap = new HashMap<String,Object>();
-        queryMap.put("id",user_uuid);
+        Map<String, Object> queryMap = new HashMap<String, Object>();
+        queryMap.put("id", user_uuid);
         List<UserInfoDto> list = userInfoDao.selectUserInfoList(queryMap);
         return list;
     }
 
+    @Override
+    public void UpdateUserInfoList(UserInfoDto userInfoDto) {
+        userInfoDao.updateUserInfoList(userInfoDto);
+    }
+
+    @Override
+    public void InsertUserInfoList(UserInfoDto userInfoDto) {
+        userInfoDao.insertUserInfoList(userInfoDto);
+    }
 }

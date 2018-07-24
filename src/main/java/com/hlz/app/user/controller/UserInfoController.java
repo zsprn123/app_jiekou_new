@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,6 +37,41 @@ public class UserInfoController {
             dto.setSuccess("-1");
             logger.info(logtitle+"查询失败,"+"异常："+e);
             e.printStackTrace();
+        }
+        return dto;
+    }
+    @ResponseBody
+    @GetMapping("/upateInfoData")
+    public TestReponseDto UpdateUserInfo(@RequestBody UserInfoDto userInfoDto) {
+        TestReponseDto dto = new TestReponseDto();
+        try {
+            userInfoService.UpdateUserInfoList(userInfoDto);
+            dto.setMessage("更新成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"更新成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            dto.setMessage("更新失败");
+            dto.setSuccess("-1");
+            logger.info(logtitle+"更新失败,"+"异常："+e);
+        }
+        return dto;
+    }
+
+    @ResponseBody
+    @GetMapping("/insertInfoData")
+    public TestReponseDto InsertUserInfoList(@RequestBody UserInfoDto userInfoDto) {
+        TestReponseDto dto = new TestReponseDto();
+        try {
+            userInfoService.InsertUserInfoList(userInfoDto);
+            dto.setMessage("插入成功");
+            dto.setSuccess("1");
+            logger.info(logtitle+"插入成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            dto.setMessage("插入失败");
+            dto.setSuccess("-1");
+            logger.info(logtitle+"插入失败,"+"异常："+e);
         }
         return dto;
     }

@@ -9,5 +9,7 @@ import java.util.Map;
 
 @Component
 public interface UserInfoDao {
+    void insertUserInfoList(UserInfoDto userInfoDto);
     List<UserInfoDto> selectUserInfoList(Map<String, Object> queryMap);
+    void updateUserInfoList(UserInfoDto userInfoDto);
 }
